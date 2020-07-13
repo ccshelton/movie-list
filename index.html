@@ -9,23 +9,15 @@
 </head>
 <body>
     <header></header>
-    <ul class="sidebar">
-        <li>
-            <a href="#"><span class="glyphicon glyphicon-film"></span>Search movies</a>
-        </li>
-        <li>
-            <a href="#"><span class="glyphicon glyphicon-th-list"></span>Movie bracket</a>
-        </li>
-    </ul>
     <div class="subheader">
         <div class="search-container">
-            <input id="search-title" type="text" value="Eternal Sunshine of the Spotless Mind">
+            <input id="search-title" type="text">
             <button id="search-submit" class="button-primary button">Search</button>
         </div>
     </div>
     <main>
         <div id="search-results">
-            <div class="movie-card">
+            <div class="movie-card" id="movie-result" data-movie="Eternal Sunshine of the Spotless Mind">
                 <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg" class="poster">
                 <div class="details">
                     <p class="title">Eternal Sunshine of the Spotless Mind</p>
@@ -38,11 +30,34 @@
                     <a href="#">See more</a>
                 </div>
                 <div class="card-actions">
-                    <button class="button button-secondary">Add to list</button>
+                    <button class="button button-secondary" id="add-bracket" data-toggle="modal" data-target="#bracket-modal" data-title="Eternal Sunshine of the Spotless Mind">Add to bracket</button>
                 </div>
             </div>        
         </div>
     </main>
+    <div class="modal fade" id="bracket-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Where would you like to assign the movie?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <select id="bracket-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button button-secondary" id="assign-movie">Assign movie</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

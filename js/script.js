@@ -2,6 +2,14 @@ $(document).ready(function(){
   $('#search-submit').click(function() {
     let input = $('#search-title').val();
     searchMovies(input);
+  });
+
+  $('#assign-movie').click(function() {
+    let movie = $("#movie-result").data("movie");
+    let bracket_pos = 'bracket'+$("#bracket-select").val();
+    
+    localStorage.setItem(bracket_pos, movie);
+    
   })
 });
 
@@ -15,7 +23,6 @@ function searchMovies(input) {
         dataType: 'jsonp',
         success: function(data) {
           showSearchResults(data);
-          console.log(data);
         },
         type: 'GET'
     });
@@ -24,7 +31,7 @@ function searchMovies(input) {
 function showSearchResults(results) {
     $("#search-results").html(
       `
-        <div class="movie-card">
+        <div class="movie-card" id="movie-result" data-movie="${results.Title}">
           <img src="${results.Poster}" class="poster">
           <div class="details">
               <p class="title">${results.Title}</p>
@@ -37,7 +44,7 @@ function showSearchResults(results) {
               <a href="#">See more</a>
           </div>
           <div class="card-actions">
-            <button class="button button-secondary">Add to list</button>
+            <button class="button button-secondary" id="add-bracket" data-toggle="modal" data-target="#bracket-modal" data-title="${results.Title}">Add to bracket</button>
           </div>
         </div>
       `
