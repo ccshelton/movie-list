@@ -8,32 +8,36 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <label>Search for movie</label>
-    <input id="search-input-title" type="text" value="Eternal Sunshine of the Spotless Mind">
-    <button id="search-submit">Search</button>
-    <hr>
-    <div id="search-results">
-        <div class="movie-card">
-            <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg" class="poster">
-            <div class="details">
-                <p class="title">Eternal Sunshine of the Spotless Mind</p>
-                <ul class="rating-list">
-                    <li class="rating raing-imdb">8.3/10 |</li>
-                    <li class="rating raing-rotten">93% | </li>
-                    <li class="rating raing-metacritic">89/100</li>
-                </ul>
-                <p class="description">When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.</p>
-                <a href="#">See more</a>
-            </div>
-            <div class="card-actions">
-                <button class="add">Add to list</button>
-            </div>
-        </div>        
+    <header></header>
+    <div class="subheader">
+        <div class="search-container">
+            <input id="search-title" type="text" value="Eternal Sunshine of the Spotless Mind">
+            <button id="search-submit" class="button-primary button">Search</button>
+        </div>
     </div>
-    <hr>
-    <div id="selected-list">
+    <main>
+        <div id="search-results">
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg" class="poster">
+                <div class="details">
+                    <p class="title">Eternal Sunshine of the Spotless Mind</p>
+                    <ul class="rating-list">
+                        <li class="rating raing-imdb"><span>imdb: </span>8.3/10 |</li>
+                        <li class="rating raing-rotten"><span>rotten: </span>93% |</li>
+                        <li class="rating raing-metacritic"><span>meta: </span>89/100</li>
+                    </ul>
+                    <p class="description">When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.</p>
+                    <a href="#">See more</a>
+                </div>
+                <div class="card-actions">
+                    <button class="button button-secondary">Add to list</button>
+                </div>
+            </div>        
+        </div>
+        <div id="selected-list">
 
-    </div>
+        </div>
+    </main>
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

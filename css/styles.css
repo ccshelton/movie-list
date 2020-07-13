@@ -1,13 +1,58 @@
+/* General */
 body {
-    background: #f1f1f1;
+    background: #eae5e4;
 }
 
+main {
+    padding: 30px 0;
+}
+
+/* Header and Subheader */
+header {
+    height: 90px;
+    background-color: #32485c;
+}
+
+.subheader {
+    padding: 25px 0;
+    text-align: center;
+    background-color: #97cedb;
+}
+
+.subheader .search-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.subheader input#search-title {
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
+    background-color: transparent;
+    width: 100%;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#search-title:focus, #search-submit:focus {
+    outline: none;
+}
+
+/* Search Results */
+#search-results {
+    text-align: center;
+}
+
+/* Movie Cards */
 .movie-card {
     padding: 20px;
     background: #fff;
     border-bottom: 2px solid #dcdcdc;
     display: inline-block;
-    width: 275px;
+    width: 350px;
 }
 
 .movie-card .poster {
@@ -16,15 +61,50 @@ body {
 }
 
 .details {
-    margin-bottom: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.details .title {
+    font-weight: 700;
+    color: #32485c;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+.details p, 
+.details li, 
+.details a {
+    font-size: 14px;
 }
 
 .rating-list {
     padding: 0;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
     list-style-type: none;
 }
 
 .rating-list .rating {
     display: inline-block;
+}
+
+.rating-list span {
+    font-weight: 700;
+    color: #439aa5;
+}
+
+/* Buttons */
+.button {
+    color: #fff;
+    border: none;
+    width: 100%;
+}
+
+.button-primary {
+    background-color: #ef798e;
+}
+
+.button-secondary {
+    background-color: #32485c;
 }
