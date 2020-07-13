@@ -1,10 +1,11 @@
 /* General */
-body {
+body, html {
     background: #eae5e4;
+    height: 100%;
 }
 
 main {
-    padding: 30px 0;
+    padding: 30px 0 0 125px;
 }
 
 /* Header and Subheader */
@@ -14,7 +15,7 @@ header {
 }
 
 .subheader {
-    padding: 25px 0;
+    padding: 25px 0 25px 125px;
     text-align: center;
     background-color: #97cedb;
 }
@@ -39,6 +40,29 @@ header {
 
 #search-title:focus, #search-submit:focus {
     outline: none;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    background-color: #429aa5;
+    float: left;
+    width: 125px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar a {
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #97cedb; 
+    text-decoration: none;
 }
 
 /* Search Results */
