@@ -1,0 +1,30 @@
+body {
+    background: #f1f1f1;
+}
+
+.movie-card {
+    padding: 20px;
+    background: #fff;
+    border-bottom: 2px solid #dcdcdc;
+    display: inline-block;
+    width: 275px;
+}
+
+.movie-card .poster {
+    width: 100%;
+    display: block;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+.rating-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.rating-list .rating {
+    display: inline-block;
+}

@@ -1,55 +1,45 @@
 $(document).ready(function(){
+  $('#search-submit').click(function() {
+    let input = $('#search-input-title').val();
+    searchMovies(input);
+  })
+});
+
+function searchMovies(input) {
+  let key = input.split("+");
     $.ajax({
-        url: 'https://spreadsheets.google.com/feeds/cells/1I7-SxitCQz6tp9bFHPinoUEasiWCeI3v226WBdM_gCI/1/public/full?alt=json',
+      url: 'http://www.omdbapi.com/?apikey=1852560f&t='+key,
         data: {
-            format: 'json'
+          format: 'json'
         },
         dataType: 'jsonp',
         success: function(data) {
-            let list = $('#movie-list');
-            let arr = data.feed.entry;
-            $.each(arr, function(index, value) {
-                if (value.title.$t.charAt(0) == 'A') {
-                    list.append(
-                        '<p class="movie-list-item">'+arr[index].gs$cell.$t+'</p>'
-                    );
-                }
-            });
+          showSearchResults(data);
+          console.log(data);
         },
         type: 'GET'
     });
-
-    $("#movie-list").on("click", ".movie-list-item", function() {
-        addToSelected(this.textContent);
-    });
-
-    $("#selected-list").on("click", ".selected-movie", function() {
-        $(this).remove();
-    });
-
-    $("#rand-select").click(function() {
-        selectRandMovie();
-    });
-
-});
-
-function addToSelected(movie) {
-    let elements = document.getElementById('selected-list').children;
-    if (elements.length < 4 ) {
-        $('#selected-list').append(
-            '<p class="selected-movie">'+movie+'</p>'
-        );
-    }
 }
 
-function selectRandMovie() {
-    let elements = document.getElementById('selected-list').children;
-    let outcome = Math.round(Math.random());
-    if (elements.length > 2) {
-        alert('You must eliminate your options down to 2');
-    } else if (elements.length < 2 ) {
-        alert('You must select 2 movies to randomly select from')
-    } else {
-        alert(elements.item(outcome).textContent);
-    }
+function showSearchResults(results) {
+    $("#search-results").html(
+      `
+        <div class="movie-card">
+          <img src="${results.Poster}" class="poster">
+          <div class="details">
+              <p class="title">${results.Title}</p>
+              <ul class="rating-list">
+                  <li class="rating raing-imdb">${results.Ratings[0].Value} |</li>
+                  <li class="rating raing-rotten">${results.Ratings[1].Value} | </li>
+                  <li class="rating raing-metacritic">${results.Ratings[2].Value}</li>
+              </ul>
+              <p class="description">${results.Plot}</p>
+              <a href="#">See more</a>
+          </div>
+          <div class="card-actions">
+              <button class="add">Add to list</button>
+          </div>
+        </div>
+      `
+    );
 }
