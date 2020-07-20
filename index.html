@@ -6,32 +6,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a181661e8d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header></header>
-    <div class="subheader">
+    <header>
         <div class="search-container">
-            <input id="search-title" type="text">
-            <button id="search-submit" class="button-primary button">Search</button>
+            <i class="fas fa-search" id="search-submit"></i>
+            <input id="search-title" type="text" autofocus>
         </div>
-    </div>
+    </header>
+    <ul class="sidebar">
+        <li></li>
+    </ul>
     <main>
         <div id="search-results">
-            <div class="movie-card" id="movie-result" data-movie="Eternal Sunshine of the Spotless Mind">
-                <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg" class="poster">
-                <div class="details">
-                    <p class="title">Eternal Sunshine of the Spotless Mind</p>
-                    <ul class="rating-list">
-                        <li class="rating raing-imdb"><span>imdb: </span>8.3/10 |</li>
-                        <li class="rating raing-rotten"><span>rotten: </span>93% |</li>
-                        <li class="rating raing-metacritic"><span>meta: </span>89/100</li>
-                    </ul>
-                    <p class="description">When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.</p>
-                    <a href="#">See more</a>
-                </div>
-                <div class="card-actions">
-                    <button class="button button-secondary" id="add-bracket" data-toggle="modal" data-target="#bracket-modal" data-title="Eternal Sunshine of the Spotless Mind">Add to bracket</button>
-                </div>
+            <div class="movie-card" id="movie-result">
+                <i class="fas fa-film missing"></i>
+                <p class="missing-details">Use the search to find a movie!</p>
             </div>        
         </div>
     </main>

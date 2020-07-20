@@ -1,74 +1,84 @@
 /* General */
 body, html {
-    background: #eae5e4;
+    background: #2D2B55;
     height: 100%;
 }
 
 main {
-    padding: 100px 0;
+    padding: 40px 0 0 200px;
 }
 
-/* Header and Subheader */
+/* Header and Sidebar */
 header {
     height: 90px;
-    background-color: #32485c;
-}
-
-.subheader {
-    padding: 25px 0;
-    text-align: center;
-    background-color: #97cedb;
-}
-
-.subheader .search-container {
-    width: 30%;
-    margin: 0 auto;
-}
-
-.subheader input#search-title {
-    border-top: 0px;
-    border-right: 0px;
-    border-bottom: 1px solid #fff;
-    border-left: 1px solid #fff;
-    background-color: transparent;
-    width: 100%;
-    color: #fff;
-    display: inline-block;
-    margin-bottom: 15px;
-    padding: 5px;
+    background-color: #2B2E42;
+    padding: 20px 0;
 }
 
 #search-title:focus, #search-submit:focus {
     outline: none;
 }
 
-/* Search Results */
-#search-results {
-    text-align: center;
+.search-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.search-container i {
+    font-size: 24px;
+    color: #474F62;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+input#search-title {
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #474F62;
+    border-left: 1px solid #474F62;
+    background-color: transparent;
+    width: 80%;
+    color: #B7BDCF;
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: 100;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.sidebar {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 200px;
+    background: #1F2232;
+    position: fixed;
+    height: 100%;
 }
 
 /* Movie Cards */
 .movie-card {
-    padding: 20px;
-    background: #fff;
-    border-bottom: 2px solid #dcdcdc;
-    display: inline-block;
-    width: 350px;
+    background: #2B2E42;
+    width: 80%;
+    margin: 0 auto;
+    height: 450px;
 }
 
 .movie-card .poster {
-    width: 100%;
-    display: block;
+    display: inline-block;
 }
 
 .details {
-    margin: 20px 0;
     text-align: left;
+    display: inline-block;
+    width: 50%;
+    padding: 0 10px;
 }
 
 .details .title {
     font-weight: 700;
-    color: #32485c;
+    color: #fff;
     margin-bottom: 0px;
     font-size: 16px;
 }
@@ -79,6 +89,10 @@ header {
     font-size: 14px;
 }
 
+.details .description {
+    color: #d4d4d4;
+}
+
 .rating-list {
     padding: 0;
     margin-top: 0;
@@ -87,25 +101,42 @@ header {
 }
 
 .rating-list .rating {
+    color: #fff;
     display: inline-block;
 }
 
 .rating-list span {
     font-weight: 700;
-    color: #439aa5;
+    color: #fff;
+}
+
+.movie-card .missing {
+    font-size: 120px;
+    color: #474F62;
+    display: block;
+    text-align: center;
+    padding: 150px 0 0 0;
+    margin-bottom: 10px;
+}
+
+.movie-card .missing-details {
+    font-size: 20px;
+    color: #d4d4d4;
+    font-weight: 200;
+    text-align: center;
 }
 
 /* Buttons */
 .button {
     color: #fff;
-    border: none;
     width: 100%;
 }
 
 .button-primary {
-    background-color: #ef798e;
+    background-color: #6363F6;
+    border: 2px solid #3D3F7B;
 }
 
 .button-secondary {
-    background-color: #32485c;
+    border: 2px solid #6363F6
 }

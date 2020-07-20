@@ -41,10 +41,6 @@ function showSearchResults(results) {
                   <li class="rating raing-metacritic"><span>meta: </span>${results.Ratings[2].Value}</li>
               </ul>
               <p class="description">${results.Plot}</p>
-              <a href="#">See more</a>
-          </div>
-          <div class="card-actions">
-            <button class="button button-secondary" id="add-bracket" data-toggle="modal" data-target="#bracket-modal" data-title="${results.Title}">Add to bracket</button>
           </div>
         </div>
       `
