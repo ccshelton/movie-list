@@ -1,19 +1,17 @@
 $(document).ready(function(){
   $('#search-submit').click(function() {
-    let input = $('#search-title').val();
-    searchMovies(input);
+    searchMovies();
   });
 
-  $('#assign-movie').click(function() {
-    let movie = $("#movie-result").data("movie");
-    let bracket_pos = 'bracket'+$("#bracket-select").val();
-    
-    localStorage.setItem(bracket_pos, movie);
-    
-  })
+  $('#search-title').keypress(function() {
+    if ( event.which == 13 ) {
+      searchMovies();
+    }
+  });
 });
 
-function searchMovies(input) {
+function searchMovies() {
+  let input = $('#search-title').val();
   let key = input.split("+");
     $.ajax({
       url: 'https://www.omdbapi.com/?apikey=1852560f&t='+key,
