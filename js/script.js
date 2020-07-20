@@ -16,7 +16,7 @@ $(document).ready(function(){
 function searchMovies(input) {
   let key = input.split("+");
     $.ajax({
-      url: 'http://www.omdbapi.com/?apikey=1852560f&t='+key,
+      url: 'https://www.omdbapi.com/?apikey=1852560f&t='+key,
         data: {
           format: 'json'
         },
