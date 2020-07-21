@@ -63,6 +63,9 @@ input#search-title {
     width: 80%;
     margin: 0 auto;
     height: 450px;
+    -webkit-box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.4);    
 }
 
 .movie-card .poster {
@@ -73,14 +76,15 @@ input#search-title {
     text-align: left;
     display: inline-block;
     width: 50%;
-    padding: 0 10px;
+    padding: 0 15px;
+    vertical-align: middle;
 }
 
 .details .title {
     font-weight: 700;
     color: #fff;
     margin-bottom: 0px;
-    font-size: 16px;
+    font-size: 30px;
 }
 
 .details p, 
@@ -91,23 +95,23 @@ input#search-title {
 
 .details .description {
     color: #d4d4d4;
+    margin: 20px 0;
 }
 
-.rating-list {
+.card-list {
     padding: 0;
     margin-top: 0;
-    margin-bottom: 20px;
     list-style-type: none;
 }
 
-.rating-list .rating {
-    color: #fff;
+.card-list li {
+    color: #d4d4d4;
     display: inline-block;
 }
 
-.rating-list span {
-    font-weight: 700;
+.card-list span {
     color: #fff;
+    font-weight: 700;
 }
 
 .movie-card .missing {
@@ -115,7 +119,7 @@ input#search-title {
     color: #474F62;
     display: block;
     text-align: center;
-    padding: 150px 0 0 0;
+    padding: 125px 0 0 0;
     margin-bottom: 10px;
 }
 
@@ -126,17 +130,27 @@ input#search-title {
     text-align: center;
 }
 
+.action-bar {
+    margin-top: 30px;
+}
+
+.action-bar .button {
+    margin-right: 10px;
+}
+
 /* Buttons */
 .button {
-    color: #fff;
-    width: 100%;
+    padding: 5px 15px;
 }
 
 .button-primary {
+    color: #fff;
     background-color: #6363F6;
     border: 2px solid #3D3F7B;
 }
 
 .button-secondary {
-    border: 2px solid #6363F6
+    color: #6363F6;
+    border: 2px solid #6363F6;
+    background-color: transparent;
 }
